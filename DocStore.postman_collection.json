@@ -1,0 +1,322 @@
+{
+  "info": {
+    "_postman_id": "75d39cd8-5921-45d6-8aaf-c275bb9c65ac",
+    "name": "DocStore",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "17574594"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"string\",\n  \"password\": \"string\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/users/login/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "users",
+            "login",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"string\",\n  \"password\": \"string\",\n  \"email\": \"user@example.com\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/users/register/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "users",
+            "register",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Documents",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg2NDIyNjQ5LCJpYXQiOjE2ODY0MTkwNDksImp0aSI6Ijg3ZjExNzRkZTJmZjQzOTI4MTBlZDViN2M4OWNiZjgxIiwidXNlcl9pZCI6MX0.trS49BRzwTYyUpl55gcZe8dYZ0Qcs6XpuK0mhFWGniI",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{access_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/docstore/documents/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "docstore",
+            "documents",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Documents",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg2NDIyNjQ5LCJpYXQiOjE2ODY0MTkwNDksImp0aSI6Ijg3ZjExNzRkZTJmZjQzOTI4MTBlZDViN2M4OWNiZjgxIiwidXNlcl9pZCI6MX0.trS49BRzwTYyUpl55gcZe8dYZ0Qcs6XpuK0mhFWGniI",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{access_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "name",
+              "value": "test",
+              "type": "text"
+            },
+            {
+              "key": "folder",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "topic",
+              "value": "1",
+              "type": "text"
+            },
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/Users/macbook/Downloads/testmachine_logo.png"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/docstore/documents/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "docstore",
+            "documents",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Folder",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg2NDIyNjQ5LCJpYXQiOjE2ODY0MTkwNDksImp0aSI6Ijg3ZjExNzRkZTJmZjQzOTI4MTBlZDViN2M4OWNiZjgxIiwidXNlcl9pZCI6MX0.trS49BRzwTYyUpl55gcZe8dYZ0Qcs6XpuK0mhFWGniI",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{access_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"test nested folder\",\n  \"parent_folder\": 8,\n  \"is_active\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/docstore/folders/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "docstore",
+            "folders",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Folder",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg2NDIyNjQ5LCJpYXQiOjE2ODY0MTkwNDksImp0aSI6Ijg3ZjExNzRkZTJmZjQzOTI4MTBlZDViN2M4OWNiZjgxIiwidXNlcl9pZCI6MX0.trS49BRzwTYyUpl55gcZe8dYZ0Qcs6XpuK0mhFWGniI",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{access_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/docstore/folders/2/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "docstore",
+            "folders",
+            "2",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create Topic",
+      "request": {
+        "auth": {
+          "type": "bearer",
+          "bearer": [
+            {
+              "key": "token",
+              "value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjg2NDIyNjQ5LCJpYXQiOjE2ODY0MTkwNDksImp0aSI6Ijg3ZjExNzRkZTJmZjQzOTI4MTBlZDViN2M4OWNiZjgxIiwidXNlcl9pZCI6MX0.trS49BRzwTYyUpl55gcZe8dYZ0Qcs6XpuK0mhFWGniI",
+              "type": "string"
+            },
+            {
+              "key": "password",
+              "value": "{{access_token}}",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"test topic\"\n\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/docstore/topics/",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "docstore",
+            "topics",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
