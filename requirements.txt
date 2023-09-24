@@ -1,0 +1,9 @@
+Django==4.2.2
+django_environ==0.10.0
+djangorestframework_simplejwt==5.2.2
+drf_yasg==1.21.5
+pytest==7.3.1
+pytest-django==4.5.2
+psycopg2==2.9.6
+pre_commit==3.3.2
+django-filter==23.2
